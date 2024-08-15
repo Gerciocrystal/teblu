@@ -67,7 +67,12 @@ export default function Login() {
             error={errors.password}
             type="password"
           />
-          <ButtomField text="Login" loading={loading} />
+          <Box display="flex" w="100%" flexDir="column" gap={2}>
+            <ButtomField text="Login" loading={loading} />
+            <Text alignSelf="flex-end" color="primary" fontSize="sm">
+              Recuperar senha
+            </Text>
+          </Box>
         </Box>
       </form>
 
