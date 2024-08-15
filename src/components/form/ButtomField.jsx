@@ -5,7 +5,8 @@ const ButtomField = ({ text, loading }) => {
     <Button
       height="49px"
       type="submit"
-      colorScheme="orange"
+      color="white"
+      background="primary"
       isLoading={loading}>
       {text}
     </Button>
