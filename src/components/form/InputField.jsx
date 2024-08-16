@@ -58,7 +58,7 @@ const InputField = ({
         zIndex={4}
         background="#FAFAFA"
         px="2"
-        borderRadius="lg"
+        borderRadius="base"
         ml="2">
         <FormLabel htmlFor={name} mb="0" zIndex="1" color="#757575">
           {title}

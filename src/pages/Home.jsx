@@ -1,39 +1,18 @@
-import { Container } from "@chakra-ui/react";
-import Slider from "react-slick";
-import SliderItem from "../components/layout/SliderItem";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-import Footer from "../components/layout/Footer";
-
-function Home() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-
-    autoplaySpeed: 9000,
-  };
+import { Grid } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import Square from "../components/misselation/Square";
+export default function Home() {
+  const cards = [1, 2, 3, 4];
   return (
-    <Container
-      position="relative"
-      display="flex"
-      alignItems="center"
-      flexDir="column"
-      height="100dvh"
-      minW="100%"
-      overflow="hidden"
-      py="50px">
-      <Slider {...settings}>
-        <SliderItem />
-        <SliderItem type="dois" />
-      </Slider>
-
-      <Footer />
-    </Container>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 1 }}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={4} p={5} py="50px">
+        {cards.map((card) => (
+          <Square key={card} index={card} />
+        ))}
+      </Grid>
+    </motion.div>
   );
 }
-
-export default Home;

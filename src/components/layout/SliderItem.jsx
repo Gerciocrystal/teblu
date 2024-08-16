@@ -1,5 +1,5 @@
 import { Box, Image, Text, VStack } from "@chakra-ui/react";
-import agil_photo from "../../assets/img/agil.jpeg";
+import agil_photo from "../../assets/img/agail_without.png";
 import AgilListItem from "../misselation/AgilListItem";
 import PropTypes from "prop-types";
 const SliderItem = ({ type }) => {
@@ -7,17 +7,18 @@ const SliderItem = ({ type }) => {
     <Box
       display="flex"
       flexDir="column"
-      gap={4}
+      gap={6}
       alignItems="center"
       alignContent="center">
       <Image
+        objectFit="cover"
         src={agil_photo}
-        boxSize="110px"
+        width="90px"
         height="auto"
         alt="ilustracao agil no fundo branco e preenchida com a cor laranja "
       />
       <Text fontWeight="bold">Lorem inoum is Simply</Text>
-      <Text textAlign="center">
+      <Text textAlign="center" color="textFont">
         É com satisfação que te informamos que foste selecionado para avançar à
         próxima fase do nosso processo de contratação na Tablutech. Nesta etapa,
         iremos avaliar as tuas habilidades em desenvolvimento Web, com foco na
