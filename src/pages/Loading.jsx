@@ -8,7 +8,7 @@ export default function Loading() {
   useEffect(() => {
     setInterval(() => {
       navigate("/opt", { state: { message: "Registo efectuado com sucesso" } });
-    }, 9000);
+    }, 5000);
   }, [navigate]);
   return (
     <motion.div

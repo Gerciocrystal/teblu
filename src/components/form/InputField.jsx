@@ -60,14 +60,19 @@ const InputField = ({
         px="2"
         borderRadius="base"
         ml="2">
-        <FormLabel htmlFor={name} mb="0" zIndex="1" color="#757575">
+        <FormLabel
+          htmlFor={name}
+          mb="0"
+          fontSize="sm"
+          zIndex="1"
+          color="#757575">
           {title}
         </FormLabel>
       </Box>
       <InputGroup>
         <Input
           pl={name == "phone" && isFocused ? "75px" : 2}
-          height="50px"
+          height="55px"
           minW="220px"
           step="any"
           type={activeType}
@@ -91,7 +96,7 @@ const InputField = ({
 
         {name == "phone" && isFocused && (
           <InputLeftElement width="4.7rem" height="100%">
-            <Text>+ 258</Text>
+            <Text color="textFont">+ 258</Text>
           </InputLeftElement>
         )}
         {type == "password" && (

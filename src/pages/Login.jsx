@@ -55,18 +55,18 @@ export default function Login() {
         <form onSubmit={handleSubmit(login)} style={{ width: "100%" }}>
           <Box w="100%" display="flex" flexDir="column" gap={9}>
             <InputField
-              maxLength={30}
+              maxLength={9}
               required={true}
               name="phone"
               placeholder="digite o seu celular"
               register={register}
-              title="phone"
+              title="Celular"
               error={errors.username}
               type="text"
             />
             <Box display="flex" w="100%" flexDir="column" gap={2}>
               <InputField
-                maxLength={70}
+                maxLength={20}
                 required={true}
                 name="password"
                 placeholder="Senha"

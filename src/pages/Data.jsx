@@ -5,24 +5,13 @@ import InputField from "../components/form/InputField";
 import ButtomField from "../components/form/ButtomField";
 import phone_icon from "../assets/img/phone.jpeg";
 import email_icon from "../assets/img/mail.jpeg";
-import {
-  Box,
-  Button,
-  Container,
-  HStack,
-  Image,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Container, HStack, Image, Text } from "@chakra-ui/react";
 import agil_photo from "../assets/img/agail_without.png";
 import Footer from "../components/layout/Footer";
 import { useNavigate } from "react-router-dom";
 export default function Data() {
   const navigate = useNavigate();
+  const [active, setActive] = useState("phone");
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -88,25 +77,37 @@ export default function Data() {
               error={errors.date}
               type="date"
             />
-            <Tabs orientation="vertical">
-              <TabList>
-                <Tab
+            <HStack spacing={2} w="100%" alignItems="flex-start">
+              <Box display="flex" flexDir="column">
+                <Box
+                  height="47px"
+                  w="50px"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
                   border="1px solid #ACACAC"
                   borderColor="textFont"
+                  onClick={() => setActive("phone")}
                   borderRadius="base">
                   <Image src={phone_icon} />
-                </Tab>
-                <Tab
+                </Box>
+                <Box
+                  height="47px"
+                  w="50px"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
                   border="1px solid #ACACAC"
                   borderColor="textFont"
+                  onClick={() => setActive("mail")}
                   borderRadius="base">
                   <Image src={email_icon} />
-                </Tab>
-              </TabList>
-              <TabPanels>
-                <TabPanel>
+                </Box>
+              </Box>
+              <Box flex={1}>
+                {active === "phone" && (
                   <InputField
-                    maxLength={30}
+                    maxLength={9}
                     name="phone"
                     placeholder="eggs: 840224546"
                     register={register}
@@ -114,8 +115,8 @@ export default function Data() {
                     error={errors.phone}
                     type="text"
                   />
-                </TabPanel>
-                <TabPanel>
+                )}
+                {active === "mail" && (
                   <InputField
                     maxLength={30}
                     name="email"
@@ -125,11 +126,11 @@ export default function Data() {
                     error={errors.phone}
                     type="text"
                   />
-                </TabPanel>
-              </TabPanels>
-            </Tabs>
+                )}
+              </Box>
+            </HStack>
           </Box>
-          <HStack w="100%" justifyContent="space-between">
+          <HStack w="100%" justifyContent="space-between" my={3}>
             <Button
               onClick={() => navigate("/main")}
               w="48%"
